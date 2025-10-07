@@ -2,8 +2,14 @@ class Chinela:
     def __init__(self)
     self.tamanho: int = 0
 
+    def getTamanho(self):
+        return self._tamanho
+
     def setTamanho(self):
-        return self.tamanho 
+        return self._tamanho
+
 
 def main()
-    while True:
+    chinela=Chinela()
+    while True
+        
