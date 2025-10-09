@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-09_12-41-48",
+            "content": "@@ -109,16 +109,27 @@\n eturn f%22\n+esse %C3%A9 seu \n tamanho:\n@@ -183,16 +183,17 @@\n am: str)\n+ \n :%0A      \n@@ -202,16 +202,17 @@\n if tam==\n+ \n %22PP%22 or \n@@ -216,16 +216,17 @@\n or tam==\n+ \n %22P%22 or t\n@@ -299,16 +299,17 @@\n tamanho=\n+ \n tam%0A    \n@@ -340,18 +340,21 @@\n rint\n-(%22\n+ (f%22 \n tamanho \n inv%C3%A1\n@@ -353,19 +353,29 @@\n nho \n-inv%C3%A1lido%22)%0A\n+despropocional%22)%0A    \n %0A   \n@@ -387,17 +387,17 @@\n get_tama\n-m\n+n\n ho(self)\n@@ -428,20 +428,16 @@\n tamanho%0A\n-    \n %0Adef mai\n@@ -452,17 +452,16 @@\n  camisa=\n- \n Camisa()\n@@ -556,16 +556,17 @@\n tama\n-m\n+n\n ho() !=\n+ \n %22%22:%0A\n@@ -583,16 +583,17 @@\n   break%0A\n+%0A\n     prin\n@@ -602,14 +602,19 @@\n camisa)%0A\n+    %0A\n main()\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-10-09_12-56-18",
+            "content": "class Camisa:\n    def __init__(self):\n        self.__tamanho: str =\"\"\n\n    def __str__(self)->str:\n        return f\"tamanho: {self.__tamanho}\"\n\n    def set_tamanho(self, tam: str):\n        if tam==\"PP\" or tam==\"P\" or tam==\"M\" or tam==\"G\" or tam==\"GG\" or tam==\"XG\":\n            self.__tamanho=tam\n            return\n        print(\"tamanho inv\u00e1lido\")\n\n    def get_tamamho(self):\n        return self.__tamanho\n    \ndef main():\n    camisa= Camisa()\n    while True:\n        n= input()\n        camisa.set_tamanho(n)\n        if camisa.get_tamamho() !=\"\":\n            break\n    print(camisa)\nmain()",
+            "lines": "25"
+        }
+    ]
+}
