@@ -21,4 +21,4 @@ class Bateria:
     def __init__(self, capacidade):
         self.__capacidade: int = capacidade
         self.__carga: int= capacidade 
-    
+        
