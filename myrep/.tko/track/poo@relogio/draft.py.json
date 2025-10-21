@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-21_14-14-21",
+            "content": "@@ -489,22 +489,26 @@\n ail:\n+ a\n  hora \n-invalida\n+nao existe\n %22)%0A%0A\n@@ -646,16 +646,18 @@\n ail:\n+ o\n  minuto \n inva\n@@ -652,24 +652,26 @@\n  minuto \n-invalido\n+nao existe\n %22)%0A%0A    \n@@ -816,16 +816,18 @@\n (f%22fail:\n+ o\n  segundo\n@@ -831,16 +831,18 @@\n ndo \n-invalido\n+nao existe\n %22)%0A%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-10-21_14-15-09",
+            "content": "@@ -955,32 +955,34 @@\n mini+=1%0A        \n+el\n if self.__mini%3E5\n@@ -1037,32 +1037,34 @@\n hora+=1%0A        \n+el\n if self.__hora%3E2\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-10-21_14-15-45",
+            "content": "class Watch:\n    def __init__(self, hora: int = 0 , mini:int= 0, seg:int= 0):\n        self.__hora: int = 0\n        self.__mini: int = 0\n        self.__seg: int = 0\n        self.set_hora(hora)\n        self.set_min(mini)\n        self.set_segundo(seg)\n\n        \n    def __str__(self)->str:\n        return f\"{self.__hora:02}:{self.__mini:02}:{self.__seg:02}\"\n\n    def set_hora(self, hora:int):\n        if hora>=0 and hora<=23:\n            self.__hora=hora\n            return\n        print(f\"fail: hora invalida\")\n\n    def set_min(self, mini:int):\n        if mini>=0 and mini<=59:\n            self.__mini=mini\n            return\n        print(f\"fail: minuto invalido\")\n\n    def set_segundo(self, segundo:int):\n        if segundo>=0 and segundo<=59:\n            self.__seg=segundo\n            return\n        print(f\"fail: segundo invalido\")\n\n    def nextSecond(self):\n        self.__seg+=1\n        if self.__seg>59:\n            self.__seg=0\n            self.__mini+=1\n        if self.__mini>59:\n            self.__mini=0\n            self.__hora+=1\n        if self.__hora>23:\n            self.__hora=0\n\ndef main():\n    watch=Watch()\n    while True:\n        line=input() \n        print(f\"${line}\")   \n        args=line.split()\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"init\":\n            watch=Watch(int(args[1]), int(args[2]), int(args[3]))\n        elif args[0]==\"show\":\n            print(watch)\n        elif args[0]==\"next\":\n            watch.nextSecond()\n        elif args[0]==\"set\":\n            watch.set_hora(int(args[1]))\n            watch.set_min(int(args[2]))\n            watch.set_segundo(int(args[3]))\nmain()\n    \n",
+            "lines": "62"
+        }
+    ]
+}

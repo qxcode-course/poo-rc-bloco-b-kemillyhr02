@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-15_14-11-04",
+            "content": "@@ -700,12 +700,13 @@\n s%5B1%5D)%0Amain()\n+%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-15_14-11-20",
+            "content": "@@ -702,21 +702,8 @@\n 1%5D)%0A\n-            %0A\n main\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-10-15_14-13-12",
+            "content": "@@ -523,12 +523,12 @@\n ne.s\n-plit\n+trip\n ()%0A%0A\n@@ -698,15 +698,27 @@\n rgs%5B1%5D)%0A\n+            \n %0Amain()\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-15_14-13-40",
+            "content": "@@ -326,57 +326,24 @@\n nt(%22\n-fail: Valor inv%C3%A1lido, tente PP, P, M, G, GG ou XG\n+tamanho inv%C3%A1lido\n %22)%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-15_14-14-26",
+            "content": "class Camisa:\n    def __init__(self):\n        self.__tamanho: str =\"\"\n\n    def __str__(self)->str:\n        return f\"size: ({self.__tamanho})\"\n\n    def set_tamanho(self, tam: str):\n        if tam==\"PP\" or tam==\"P\" or tam==\"M\" or tam==\"G\" or tam==\"GG\" or tam==\"XG\":\n            self.__tamanho=tam\n            return\n        print(\"fail: Valor inv\u00e1lido, tente PP, P, M, G, GG ou XG\")\n\n    def get_tamamho(self):\n        return self.__tamanho\n    \ndef main():\n    camisa= Camisa()\n    while True:\n        line=input()\n        print(f\"${line}\")\n        args=line.split()\n\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(camisa)\n        elif args[0]==\"size\":\n            camisa.set_tamanho(args[1])\n\nmain()",
+            "lines": "31"
+        }
+    ]
+}
