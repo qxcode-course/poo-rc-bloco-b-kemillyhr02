@@ -11,7 +11,7 @@ class Notebook:
             print(f"Notebook ligado")
         else :
             print(f"Notebook desligado")
-    def usar(self, tempo: int)
+    def usar(self, tempo: int):
         if tempo>self.__bateria:
             
     
