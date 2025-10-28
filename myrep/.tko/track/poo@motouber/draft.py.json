@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-28_14-36-14",
+            "content": "@@ -2486,12 +2486,4 @@\n do%22)\n-%0A%0Amain()\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-10-28_14-36-30",
+            "content": "@@ -453,24 +453,76 @@\n _init__(self\n+, passageiro: Pessoa, motorista:Pessoa, custo: int=0\n ):%0A        s\n@@ -601,17 +601,21 @@\n custo = \n-0\n+custo\n %0A%0A    de\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-36-59",
+            "content": "@@ -870,16 +870,23 @@\n Driver:%7B\n+self.__\n motorist\n@@ -900,26 +900,27 @@\n senger:%7B\n-passageiro\n+self.__nome\n %7D%22%0A    %0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-37-50",
+            "content": "@@ -869,17 +869,16 @@\n  Driver:\n- \n %7Bmotoris\n@@ -892,17 +892,16 @@\n ssenger:\n- \n %7Bpassage\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-38-07",
+            "content": "@@ -2104,17 +2104,16 @@\n setDrive\n-r\n %22:%0A     \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-38-22",
+            "content": "@@ -159,16 +159,22 @@\n eturn f%22\n+nome: \n %7Bself.__\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-39-02",
+            "content": "@@ -1831,39 +1831,8 @@\n to)%0A\n-        self.__passageiro=None%0A\n     \n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-10-28_14-39-28",
+            "content": "class Pessoa:\n    def __init__(self, nome:str, money:int):\n        self.__nome = nome\n        self.__money = money\n    \n    def __str__(self,)->str:\n        return f\"{self.__nome}:{self.__money}\"\n    def get_nome(self):\n        return self.__nome\n    def set_nome(self, name: str):\n        self.__nome=name\n    def get_money(self):\n        return self.__money\n    def set_money(self, money: int):\n        self.__money=money\n\nclass Moto:\n    def __init__(self):\n        self.__passageiro = None \n        self.__motorista = None\n        self.__custo = 0\n\n    def __str__(self)->str:\n        if self.__motorista==None:\n            motorista=\"None\"\n        else:\n            motorista=self.__motorista\n\n        if self.__passageiro==None:\n            passageiro=\"None\"\n        else:\n            passageiro=self.__passageiro    \n        return f\"Cost: {self.__custo}, Driver: {motorista}, Passenger: {passageiro}\"\n    \n    def setDrive(self, name: str, money: int):\n        motorista=Pessoa(name, money)\n        if self.__motorista==None:\n            self.__motorista= motorista\n        else:\n            print(f\"fail: ja tem um motorista\")\n    def setPass(self, name: str, money:int):\n        passageiro=Pessoa(name, money)\n        if self.__passageiro==None:\n            self.__passageiro=passageiro\n        else:\n            print(f\"fail: ja tem um passageiro\")\n\n    def drive(self, n:int):\n        self.__custo+=n\n\n    def leavePass(self):\n        if self.__passageiro.get_money()<self.__custo:\n            print(\"fail: Passenger does not have enough money\")\n            self.__passageiro.set_money(0)\n\n        else:\n            self.__passageiro.set_money(self.__passageiro.get_money()-self.__custo)\n            \n        print(f\"{self.__passageiro} left\")\n        self.__motorista.set_money(self.__motorista.get_money()+self.__custo)\n        self.__passageiro=None\n        self.__custo=0\n\ndef main():\n    moto=Moto()\n    while True:\n        line=input()\n        print(f\"${line}\")\n        args=line.split()\n        if args[0]==\"end\":\n            break\n        elif args[0]==\"show\":\n            print(moto)\n        elif args[0]==\"setDriver\":\n            moto.setDrive(args[1],int(args[2]))\n        elif args[0]==\"setPass\":\n            moto.setPass(args[1],int(args[2]))\n        elif args[0]==\"leavePass\":\n            moto.leavePass()\n        elif args[0]==\"drive\":\n            moto.drive(int(args[1]))\n        else :\n            print(f\"comando invalido\")\n\nmain()",
+            "lines": "85"
+        }
+    ]
+}
